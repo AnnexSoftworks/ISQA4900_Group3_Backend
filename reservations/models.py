@@ -66,7 +66,7 @@ class Room(models.Model):
     room_number = models.IntegerField()
     guest_limit = models.IntegerField()
     room_type = models.ForeignKey(RoomType, on_delete=models.CASCADE, related_name='rooms')
-    amenity = models.ForeignKey(Amenity, on_delete=models.CASCADE, related_name='rooms')
+    amenity = models.ManyToManyField(Amenity, related_name='rooms')
     status = models.ForeignKey(Status, on_delete=models.CASCADE, related_name='rooms')
 
     def __str__(self):
