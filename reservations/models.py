@@ -55,20 +55,32 @@ class RoomType(models.Model):
     description = models.CharField(max_length=512)
     rate = models.DecimalField(max_digits=10, decimal_places=2)
 
+    def __str__(self):
+        return str(self.name)
+
 
 class Service(models.Model):
     name = models.CharField(max_length=128)
     description = models.CharField(max_length=512)
 
+    def __str__(self):
+        return str(self.name)
+
+
+class Status(models.Model):
+    availability = models.CharField(max_length=12)
+    description = models.CharField(max_length=64)
+
+    def __str__(self):
+        return str(self.availability)
+
 
 class Room(models.Model):
     room_number = models.IntegerField(blank=False, null=False)
     guest_limit = models.IntegerField(blank=False, null=False)
-    rate = models.ForeignKey(RoomType, on_delete=models.CASCADE, related_name='+')
-    availability = models.BooleanField(default=True)
-    category = models.ForeignKey(RoomType, on_delete=models.CASCADE, related_name='+')  # room type/view
-    services = models.ForeignKey(Service, on_delete=models.CASCADE, related_name='+')  # room accommodations
-    status = models.CharField(max_length=12)
+    room_type = models.ForeignKey(RoomType, on_delete=models.CASCADE, related_name='room_type_name')  # room type/view
+    services = models.ForeignKey(Service, on_delete=models.CASCADE, related_name='service_name')  # room accommodations
+    status = models.ForeignKey(Status, on_delete=models.CASCADE, related_name='room_status')  # rm status/availability
 
     def created(self):
         self.recent_date = timezone.now()
