@@ -45,8 +45,8 @@ class StatusList(admin.ModelAdmin):
 
 
 class RoomList(admin.ModelAdmin):
-    list_display = ('pk', 'room_number', 'room_type', 'status', 'amenity')
-    list_filter = ('room_number', 'room_type', 'status', 'amenity')
+    list_display = ('pk', 'room_number', 'room_type', 'status')
+    list_filter = ('room_number', 'room_type', 'status')
     search_fields = ('room_number', 'rate', 'room_type', 'status', 'amenity')
     ordering = ['room_number']
 
