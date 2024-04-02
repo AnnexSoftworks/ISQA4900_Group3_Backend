@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Guest, Reservation, Status, RoomType, Room, Service
+from .models import Guest, Reservation, Status, RoomType, Room, Service, Amenity
 
 
 class GuestList(admin.ModelAdmin):
@@ -23,6 +23,13 @@ class ServiceList(admin.ModelAdmin):
     ordering = ['name']
 
 
+class AmenityList(admin.ModelAdmin):
+    list_display = ('pk', 'name', 'description')
+    list_filter = ('name', 'description')
+    search_fields = ('name', 'description')
+    ordering = ['name']
+
+
 class RoomTypeList(admin.ModelAdmin):
     list_display = ('pk', 'name', 'description', 'rate')
     list_filter = ('name', 'rate', 'description')
@@ -30,17 +37,17 @@ class RoomTypeList(admin.ModelAdmin):
     ordering = ['name']
 
 
-class StatusList (admin.ModelAdmin):
-    list_display = ('pk', 'availability', 'description')
-    list_filter = ('availability', 'description')
-    search_fields = ('availability', 'description')
-    ordering = ['availability']
+class StatusList(admin.ModelAdmin):
+    list_display = ('pk', 'status', 'description')
+    list_filter = ('status', 'description')
+    search_fields = ('status', 'description')
+    ordering = ['status']
 
 
 class RoomList(admin.ModelAdmin):
-    list_display = ('pk', 'room_number', 'room_type', 'status', 'services')
-    list_filter = ('room_number', 'room_type', 'status', 'services')
-    search_fields = ('room_number', 'rate', 'room_type', 'status', 'services')
+    list_display = ('pk', 'room_number', 'room_type', 'status', 'amenity')
+    list_filter = ('room_number', 'room_type', 'status', 'amenity')
+    search_fields = ('room_number', 'rate', 'room_type', 'status', 'amenity')
     ordering = ['room_number']
 
 
@@ -50,3 +57,4 @@ admin.site.register(Status, StatusList)
 admin.site.register(RoomType, RoomTypeList)
 admin.site.register(Room, RoomList)
 admin.site.register(Service, ServiceList)
+admin.site.register(Amenity, AmenityList)

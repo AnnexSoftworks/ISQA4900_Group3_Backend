@@ -8,7 +8,7 @@ class Guest(models.Model):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     address = models.CharField(max_length=200)
-    loyalty_number = models.IntegerField(blank=False, null=False)
+    loyalty_number = models.IntegerField()
     city = models.CharField(max_length=50)
     state = models.CharField(max_length=50)
     zipcode = models.CharField(max_length=10)
@@ -17,37 +17,20 @@ class Guest(models.Model):
     created_date = models.DateTimeField(default=timezone.now)
     updated_date = models.DateTimeField(auto_now_add=True)
 
-    def created(self):
-        self.created_date = timezone.now()
-        self.save()
+    def __str__(self):
+        return f'{self.first_name} {self.last_name} - {self.loyalty_number}'
 
-    def updated(self):
-        self.updated_date = timezone.now()
-        self.save()
+
+class Status(models.Model):
+    status = models.CharField(max_length=128)
+    description = models.CharField(max_length=256)
+
+    class Meta:
+        verbose_name = "Status"
+        verbose_name_plural = "Statuses"
 
     def __str__(self):
-        return str(self.loyalty_number)
-
-
-class Reservation(models.Model):
-    guest = models.ForeignKey(Guest, on_delete=models.CASCADE, related_name='reservations')
-    status = models.CharField(max_length=200)
-    check_in_date = models.DateField(default=timezone.now, blank=True, null=True)
-    check_out_date = models.DateField(default=timezone.now, blank=True, null=True)
-
-    def created(self):
-        self.acquired_date = timezone.now()
-        self.save()
-
-    def updated(self):
-        self.recent_date = timezone.now()
-        self.save()
-
-    def __str__(self):
-        return str(self.guest)
-
-    def cust_number(self):
-        return self.guest.loyalty_number
+        return self.status
 
 
 class RoomType(models.Model):
@@ -56,7 +39,7 @@ class RoomType(models.Model):
     rate = models.DecimalField(max_digits=10, decimal_places=2)
 
     def __str__(self):
-        return str(self.name)
+        return self.name
 
 
 class Service(models.Model):
@@ -64,27 +47,42 @@ class Service(models.Model):
     description = models.CharField(max_length=512)
 
     def __str__(self):
-        return str(self.name)
+        return self.name
 
 
-class Status(models.Model):
-    availability = models.CharField(max_length=12)
-    description = models.CharField(max_length=64)
+class Amenity(models.Model):
+    name = models.CharField(max_length=128, null=True, blank=True)
+    description = models.CharField(max_length=512)
+
+    class Meta:
+        verbose_name = "Amenity"
+        verbose_name_plural = "Amenities"
 
     def __str__(self):
-        return str(self.availability)
+        return self.name
 
 
 class Room(models.Model):
-    room_number = models.IntegerField(blank=False, null=False)
-    guest_limit = models.IntegerField(blank=False, null=False)
-    room_type = models.ForeignKey(RoomType, on_delete=models.CASCADE, related_name='room_type_name')  # room type/view
-    services = models.ForeignKey(Service, on_delete=models.CASCADE, related_name='service_name')  # room accommodations
-    status = models.ForeignKey(Status, on_delete=models.CASCADE, related_name='room_status')  # rm status/availability
+    room_number = models.IntegerField()
+    guest_limit = models.IntegerField()
+    room_type = models.ForeignKey(RoomType, on_delete=models.CASCADE, related_name='rooms')
+    amenity = models.ForeignKey(Amenity, on_delete=models.CASCADE, related_name='rooms')
+    status = models.ForeignKey(Status, on_delete=models.CASCADE, related_name='rooms')
 
-    def created(self):
-        self.recent_date = timezone.now()
-        self.save()
+    def __str__(self):
+        return f'Room {self.room_number} - Type: {self.room_type}'
+
+
+class Reservation(models.Model):
+    guest = models.ForeignKey(Guest, on_delete=models.CASCADE, related_name='reservations')
+    status = models.ForeignKey(Status, on_delete=models.CASCADE, related_name='reservations')
+    room = models.ForeignKey(Room, on_delete=models.CASCADE, related_name='reservations')
+    room_type = models.ForeignKey(RoomType, on_delete=models.CASCADE, related_name='reservations')
+    check_in_date = models.DateField(default=timezone.now, blank=True, null=True)
+    check_out_date = models.DateField(default=timezone.now, blank=True, null=True)
+
+    def __str__(self):
+        return f'Reservation for {self.guest} - Status: {self.status}'
 
 
 class Payment(models.Model):
@@ -92,6 +90,9 @@ class Payment(models.Model):
     date = models.DateField(default=timezone.now, blank=True, null=True)
     method = models.CharField(max_length=64)
     status = models.CharField(max_length=64)
+
+    def __str__(self):
+        return f'Payment of {self.amount} - Status: {self.status}'
 
 
 class Employee(models.Model):
@@ -102,3 +103,6 @@ class Employee(models.Model):
     role = models.CharField(max_length=128)
     created_date = models.DateTimeField(default=timezone.now)
     updated_date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f'{self.first_name} {self.last_name} - {self.role}'
