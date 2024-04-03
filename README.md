@@ -80,6 +80,7 @@ This project has been built with a stack that combines some of the best framewor
   ### Special Thanks
 
   [![PyCharm][PyCharm]][PyCharm-url]
+  [![WebStorm][WebStorm]][WebStorm-url]
     
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -250,3 +251,6 @@ Project Link: [https://github.com/your_username/repo_name](https://github.com/yo
 
 [PyCharm]: https://img.shields.io/badge/pycharm-143?style=for-the-badge&logo=pycharm&logoColor=black&color=black&labelColor=green
 [PyCharm-url]: https://www.jetbrains.com/pycharm/
+
+[WebStorm]: https://img.shields.io/badge/webstorm-143?style=for-the-badge&logo=webstorm&logoColor=white&color=black
+[WebStorm-url]: https://www.jetbrains.com/webstorm/
