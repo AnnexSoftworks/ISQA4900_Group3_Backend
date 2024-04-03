@@ -76,6 +76,10 @@ This project has been built with a stack that combines some of the best framewor
 
   [![PythonAnywhere][PythonAnywhere]][PythonAnywhere-url]
   [![Vercel][Vercel]][Vercel-url]
+
+  ### Special Thanks
+
+  [![PyCharm][PyCharm]][PyCharm-url]
     
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -243,3 +247,6 @@ Project Link: [https://github.com/your_username/repo_name](https://github.com/yo
 
 [PythonAnywhere]: https://img.shields.io/badge/pythonanywhere-%232F9FD7.svg?style=for-the-badge&logo=pythonanywhere&logoColor=151515
 [PythonAnywhere-url]: https://www.pythonanywhere.com/
+
+[PyCharm]: https://img.shields.io/badge/pycharm-143?style=for-the-badge&logo=pycharm&logoColor=black&color=black&labelColor=green
+[PyCharm-url]: https://www.jetbrains.com/pycharm/
