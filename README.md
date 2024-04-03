@@ -12,7 +12,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <img src="https://annexsoftworks.com/github/isqa4900/logo02.png" alt="Logo" width="398" height="254">
+  <img src="https://annexsoftworks.com/github/isqa4900/logo03.png" alt="Logo" width="398" height="254">
 
   <h3 align="center">Emerald Bay Island Resort</h3>
   <h4>ISQA4900 Group 3 Project</h4>
