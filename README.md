@@ -74,8 +74,8 @@ This project has been built with a stack that combines some of the best framewor
 
   ### Powered By
 
-  [![Vercel][Vercel]][Vercel-url]
   [![PythonAnywhere][PythonAnywhere]][PythonAnywhere-url]
+  [![Vercel][Vercel]][Vercel-url]
     
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
