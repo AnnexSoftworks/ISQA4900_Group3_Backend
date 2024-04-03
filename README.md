@@ -72,6 +72,12 @@ This project has been built with a stack that combines some of the best framewor
   [![NPM][NPM]][NPM-url]
   [![Yarn][Yarn]][Yarn-url]
 
+  ### Powered By
+
+  [![Vercel][Vercel]][Vercel-url]
+  [![PythonAnywhere][PythonAnywhere]][PythonAnywhere-url]
+    
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
@@ -231,3 +237,9 @@ Project Link: [https://github.com/your_username/repo_name](https://github.com/yo
 
 [Yarn]: https://img.shields.io/badge/yarn-%232C8EBB.svg?style=for-the-badge&logo=yarn&logoColor=white
 [Yarn-url]: https://yarnpkg.com/
+
+[Vercel]: https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white
+[Vercel-url]: https://vercel.com/
+
+[PythonAnywhere]: https://img.shields.io/badge/pythonanywhere-%232F9FD7.svg?style=for-the-badge&logo=pythonanywhere&logoColor=151515
+[PythonAnywhere-url]: https://www.pythonanywhere.com/
