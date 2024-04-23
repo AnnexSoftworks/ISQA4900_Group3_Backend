@@ -2,8 +2,8 @@ import {createRouter, createWebHistory} from 'vue-router'
 import Home from '@/components/Home.vue'
 import Auth from '@/components/Auth.vue'
 import Register from '@/components/Register'
-import ClientList from '@/components/ClientList'
-import ClientCreate from '@/components/ClientCreate'
+import GuestList from '@/components/GuestList'
+import GuestCreate from '@/components/GuestCreate'
 import About from '@/components/About'
 import Service from '@/components/Services'
 import Contact from '@/components/Contact'
@@ -18,24 +18,24 @@ const routes = [
         component: Home
     },
     {
-        path: '/client-list',
-        name: 'ClientList',
-        component: ClientList
+        path: '/guest-list',
+        name: 'GuestList',
+        component: GuestList
     },
     {
-        path: '/client-list/:msg',
-        name: 'ClientUpdatedList',
-        component: ClientList
+        path: '/guest-list/:msg',
+        name: 'GuestUpdatedList',
+        component: GuestList
     },
     {
-        path: '/client-create',
-        name: 'ClientCreate',
-        component: ClientCreate
+        path: '/guest-create',
+        name: 'GuestCreate',
+        component: GuestCreate
     },
     {
-        path: '/client-create/:pk',
-        name: 'ClientUpdate',
-        component: ClientCreate
+        path: '/guest-create/:pk',
+        name: 'GuestUpdate',
+        component: GuestCreate
     },
     {
         path: '/auth',

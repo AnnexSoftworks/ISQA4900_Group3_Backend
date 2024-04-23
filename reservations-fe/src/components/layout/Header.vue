@@ -408,12 +408,14 @@ export default {
 }
 
 header {
-  background-color: #1F232C;
+  box-shadow: 0px 2px 3px #353333;
+  background: #080303;
+  opacity: 0.9;
   z-index: 1000;
+  top:0;
   width: 100%;
   transition: 0.5s ease all;
   color: white;
-  position: relative;
 }
 
 nav {

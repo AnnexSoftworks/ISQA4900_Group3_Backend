@@ -12,9 +12,27 @@ class GuestSerializer(serializers.ModelSerializer):
 
 
 class ReservationSerializer(serializers.ModelSerializer):
+    first_name = serializers.SerializerMethodField()
+    last_name = serializers.SerializerMethodField()
+    status_name = serializers.SerializerMethodField()
+    room_number = serializers.SerializerMethodField()
+
+
     class Meta:
         model = Reservation
-        fields = ('pk', 'guest', 'status', 'check_in_date', 'check_out_date')
+        fields = ('room_number', 'first_name', 'last_name', 'status_name', 'check_in_date', 'check_out_date')
+
+    def get_first_name(self, obj):
+        return obj.guest.first_name
+
+    def get_last_name(self, obj):
+        return obj.guest.last_name
+
+    def get_status_name(self, obj):
+        return obj.status.status
+
+    def get_room_number(self, obj):
+        return obj.room.room_number
 
 
 class RoomSerializer(serializers.ModelSerializer):

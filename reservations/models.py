@@ -33,9 +33,22 @@ class Status(models.Model):
         return self.status
 
 
+class Amenity(models.Model):
+    name = models.CharField(max_length=128, null=True, blank=True)
+    description = models.CharField(max_length=512)
+
+    class Meta:
+        verbose_name = "Amenity"
+        verbose_name_plural = "Amenities"
+
+    def __str__(self):
+        return self.name
+
+
 class RoomType(models.Model):
     name = models.CharField(max_length=128)
     description = models.CharField(max_length=512)
+    amenity = models.ManyToManyField(Amenity, related_name='rooms')
     rate = models.DecimalField(max_digits=10, decimal_places=2)
 
     def __str__(self):
@@ -50,23 +63,10 @@ class Service(models.Model):
         return self.name
 
 
-class Amenity(models.Model):
-    name = models.CharField(max_length=128, null=True, blank=True)
-    description = models.CharField(max_length=512)
-
-    class Meta:
-        verbose_name = "Amenity"
-        verbose_name_plural = "Amenities"
-
-    def __str__(self):
-        return self.name
-
-
 class Room(models.Model):
     room_number = models.IntegerField()
     guest_limit = models.IntegerField()
     room_type = models.ForeignKey(RoomType, on_delete=models.CASCADE, related_name='rooms')
-    amenity = models.ManyToManyField(Amenity, related_name='rooms')
     status = models.ForeignKey(Status, on_delete=models.CASCADE, related_name='rooms')
 
     def __str__(self):

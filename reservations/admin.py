@@ -32,7 +32,7 @@ class AmenityList(admin.ModelAdmin):
 
 class RoomTypeList(admin.ModelAdmin):
     list_display = ('pk', 'name', 'description', 'rate')
-    list_filter = ('name', 'rate', 'description')
+    list_filter = ('name', 'rate', 'amenity')
     search_fields = ('name', 'rate', 'description')
     ordering = ['name']
 
