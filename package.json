@@ -4,6 +4,7 @@
     "sass-loader": "^14.1.1"
   },
   "dependencies": {
+    "pip": "^0.0.1",
     "v-calendar": "^2.4.2",
     "vue-owl-carousel": "^2.0.3"
   }
