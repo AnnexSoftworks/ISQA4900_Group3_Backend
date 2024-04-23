@@ -8,7 +8,7 @@
     </div>
   </section>
 
-  <section class="section-about">
+  <section class="section-about" style="margin: 44px 0 200px 0;">
     <div class="container">
       <div class="row">
         <div class="wrap-about">

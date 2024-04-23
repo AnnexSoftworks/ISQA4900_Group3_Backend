@@ -41,7 +41,7 @@
         <p class="subtitle" v-if="totalGuests">Guests: {{ totalGuests }}</p>
       </div>
 
-      <button class="search-button" @click="search">
+      <button class="search-button" @click="search" style="text-shadow: 1px 1px 3px rgb(0,0,0, 0.5);">
         CHECK<br/>AVAILABILITY
       </button>
     </div>
@@ -237,7 +237,7 @@ export default {
   height: 58px;
   padding-top: 0 !important;
   margin-top: -10px;
-  background-color: #d78f00;
+  background-color: #d7a500;
   line-height: 14px;
   font-size: 12px;
   font-weight: 500;

@@ -14,7 +14,7 @@
               <form class="form-inline">
                 <div class="form-group">
                   <div class="input-group">
-                    <input type="email" class="form-control" placeholder="Your email address"
+                    <input type="email" class="form-control" placeholder="E-Mail Address"
                            aria-label="Search for...">
                     <button class="btn btn-secondary" type="button">
                       <i class="ion-android-send"></i>
@@ -49,21 +49,22 @@
           <div class="col-xs-4 col-sm-4 col-md-2 col-lg-2 col-lg-offset-1 col-md-offset-1  ">
             <div class="list-content">
               <ul>
-                <li><a href="#" title="">Site Map</a></li>
-                <li><a href="#" title="">Term & Conditions</a></li>
-                <li><a href="#" title="">Privacy Policy</a></li>
-                <li><a href="#" title="">Help</a></li>
-                <li><a href="#" title="">Affiliate</a></li>
+                <li><a href="#" title="">Home</a></li>
+                <li><a href="#" title="">About</a></li>
+                <li><a href="#" title="">Amenities</a></li>
+                <li><a href="#" title="">Reservations</a></li>
+                <li><a href="#" title="">Contact</a></li>
               </ul>
             </div>
           </div>
           <div class="col-xs-4 col-sm-4 col-md-2 col-lg-2 col-lg-offset-1 col-md-offset-1 ">
             <div class="list-content ">
               <ul>
-                <li><a href="#" title="">Our Location</a></li>
-                <li><a href="#" title="">Career</a></li>
-                <li><a href="#" title="">About Us</a></li>
-                <li><a href="#" title="">Contact Us</a></li>
+                <li><a href="#" title="">Fitness Center</a></li>
+                <li><a href="#" title="">Restaurants</a></li>
+                <li><a href="#" title="">Paradise Marina</a></li>
+                <li><a href="#" title="">Golfing</a></li>
+                <li><a href="#" title="">Kid's Club</a></li>
               </ul>
             </div>
           </div>

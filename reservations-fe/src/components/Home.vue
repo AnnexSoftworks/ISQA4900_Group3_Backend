@@ -11,6 +11,7 @@
             <BookingForm/>
         </BookingCarousel>
     </div>
+  <Footer></Footer>
 </template>
 
 <script>

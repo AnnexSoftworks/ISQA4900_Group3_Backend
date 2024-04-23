@@ -469,12 +469,16 @@ ul,
   border-bottom: 1px solid transparent;
 }
 
+.link-active:hover {
+  color: #ffffff!important;
+}
+
 .sub-link:hover {
-  color: #d78f00;
+  color: #ffffff;
 }
 
 .link-active {
-  color: #d78f00;
+  color: #ffd234;
 }
 
 .branding {

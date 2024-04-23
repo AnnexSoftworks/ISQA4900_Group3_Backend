@@ -68,9 +68,9 @@ export default {
 <style scoped>
 .login-btn button {
   padding: 7px 30px;
-  border: #dcb324 1px solid;
+  border: #d78f00 1px solid;
   text-transform: uppercase;
-  background-color: #d78f00;
+  background-color: #ffd234;
   color: #1c212d;
   font-size: 14px;
   cursor: pointer;
@@ -79,6 +79,6 @@ export default {
 
 .login-btn button:hover {
   background-color: #ffffff;
-  border: #d78f00 1px solid;
+  border: #ffd234 1px solid;
 }
 </style>

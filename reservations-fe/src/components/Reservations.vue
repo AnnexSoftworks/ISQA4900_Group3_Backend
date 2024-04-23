@@ -8,7 +8,7 @@
     </div>
   </section>
 
-  <section class="section-reservation-page">
+  <section class="section-reservation-page" style="margin: 44px 0 200px 0;">
     <div class="container">
       <div class="reservation-page">
         <div class="reservation_step">
@@ -224,10 +224,17 @@
       </div>
     </div>
   </section>
+  <Footer></Footer>
 </template>
 
 <script>
+import Footer from "@/components/Footer.vue";
 
+export default {
+    components: {
+        Footer
+    },
+};
 </script>
 
 <style>
