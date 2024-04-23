@@ -16,11 +16,13 @@
 <script>
 import BookingCarousel from "@/components/booking/BookingCarousel.vue";
 import BookingForm from "@/components/booking/BookingForm.vue";
+import Footer from "@/components/Footer.vue";
 
 export default {
     components: {
         BookingCarousel,
-        BookingForm
+        BookingForm,
+        Footer
     },
 };
 </script>
