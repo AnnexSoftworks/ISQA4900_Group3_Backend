@@ -3,6 +3,12 @@ from rest_framework.decorators import api_view
 from .serializers import *
 from rest_framework.response import Response
 from rest_framework.permissions import AllowAny
+from django.shortcuts import render
+from django.http import JsonResponse
+from .models import Reservation, Guest, Room, Status, RoomType
+from django.views.decorators.csrf import csrf_exempt
+from django.utils.dateparse import parse_date
+import json
 
 
 @api_view(['GET', 'POST'])
@@ -189,3 +195,58 @@ def servicesList(request):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+@csrf_exempt
+def create_reservation(request):
+    if request.method == "POST":
+        data = json.loads(request.body)
+        guest_id = request.user.id  # Assuming the user is logged in and this is a protected view
+        check_in_date = parse_date(data.get('check_in_date'))
+        check_out_date = parse_date(data.get('check_out_date'))
+        total_guests = data.get('totalGuests')
+
+        # You need to add logic to find an available room and create a reservation
+        # Example logic (you should improve it based on your actual requirements):
+        available_room = Room.objects.filter(status__status='available').first()
+        if not available_room:
+            return JsonResponse({'error': 'No rooms available'}, status=400)
+
+        guest = Guest.objects.get(pk=guest_id)
+        status = Status.objects.get(status='booked')
+        room_type = available_room.room_type
+
+        reservation = Reservation.objects.create(
+            guest=guest,
+            status=status,
+            room=available_room,
+            room_type=room_type,
+            check_in_date=check_in_date,
+            check_out_date=check_out_date
+        )
+
+        return JsonResponse({'message': 'Reservation created successfully', 'reservation_id': reservation.id},
+                            status=201)
+
+    return JsonResponse({'error': 'Invalid request method'}, status=405)
+
+
+@csrf_exempt
+def check_availability(request):
+    if request.method == "POST":
+        data = json.loads(request.body)
+        check_in_date = data.get('check_in_date')
+        check_out_date = data.get('check_out_date')
+
+        # Filter rooms by status "Room Available"
+        available_status = Status.objects.get(status='Room Available')
+        available_rooms = Room.objects.filter(status=available_status)
+
+        rooms_data = RoomSerializer(available_rooms, many=True).data
+
+        return JsonResponse(
+            {"available_rooms": rooms_data, "check_in_date": check_in_date, "check_out_date": check_out_date},
+            status=200
+        )
+
+    return JsonResponse({'error': 'Invalid request method'}, status=405)

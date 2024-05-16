@@ -60,11 +60,11 @@
           <div class="col-xs-4 col-sm-4 col-md-2 col-lg-2 col-lg-offset-1 col-md-offset-1 ">
             <div class="list-content ">
               <ul>
-                <li><a href="#" title="">Fitness Center</a></li>
+                <li><router-link title="" :to="{name: 'FitnessPavilion'}">Fitness Center</router-link></li>
                 <li><a href="#" title="">Restaurants</a></li>
-                <li><a href="#" title="">Paradise Marina</a></li>
-                <li><a href="#" title="">Golfing</a></li>
-                <li><a href="#" title="">Kid's Club</a></li>
+                <li><router-link title="" :to="{name: 'Marina'}">Paradise Marina</router-link></li>
+                <li><router-link title="" :to="{name: 'GolfRetreat'}">Golfing</router-link></li>
+                <li><router-link title="" :to="{name: 'KidsClub'}">Kid's Club</router-link></li>
               </ul>
             </div>
           </div>

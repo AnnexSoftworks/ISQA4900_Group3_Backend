@@ -17,20 +17,16 @@
               <div class="section-slider height-v-about">
                 <div id="index12" class="owl-carousel  owl-theme">
                   <div class="item">
-                    <img alt="Third slide" src="../assets/images/coco-cay01.webp" class="img-responsive">
+                    <img alt="Third slide" src="../assets/images/marina-01.webp" class="img-responsive">
                   </div>
                 </div>
               </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 no-padding-left">
               <div class="text">
-                <h2 class="heading">Our History</h2>
+                <h2 class="heading">Marina Services</h2>
                 <div class="desc">
-                  <p>Emerald Bay Island Resort, in partnership with Royal Caribbean Cruise Lines, stands as a pinnacle
-                    of secluded luxury, nestled on the pristine shores of RCCL's Cocoa Cay. Our philosophy weaves the
-                    tranquility of an exclusive island getaway with the unmatched convenience of RCCL's impeccable
-                    voyages. While we share the island with RCCL, our resort is a world apart—a tranquil enclave
-                    dedicated to privacy, luxury, and an immersive natural experience.</p>
+                  <p>Discover the vibrant heart of Emerald Bay Island Resort at our Marina, where the sparkling waters and pristine yachts create a picturesque setting for adventure and relaxation. Whether you're setting sail on a chartered boat, indulging in water sports, or simply enjoying the stunning views, the Marina offers a perfect blend of excitement and tranquility. Our knowledgeable staff is on hand to assist with all your maritime needs, ensuring a seamless and enjoyable experience.</p>
                 </div>
               </div>
             </div>
@@ -38,20 +34,14 @@
           <div class="about-item about-right">
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6  no-padding-left col-lg-push-6 col-md-push-6 ">
               <div class="img">
-                <img src="../assets/images/coco-cay02.webp" alt="#" class="img-responsive">
+                <img src="../assets/images/marina-02.webp" alt="#" class="img-responsive">
               </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 no-padding-right col-lg-pull-6 col-md-pull-6">
               <div class="text">
-                <h2 class="heading">Tropical Paradise</h2>
+                <h2 class="heading">Sailing and Water Sports</h2>
                 <div class="desc">
-                  <p>At Emerald Bay, we believe in creating unforgettable experiences that resonate with the unique
-                    essence of our tropical paradise. From the architectural elegance of our accommodations, which
-                    harmonize with the island’s natural splendor, to the personalized services designed to indulge your
-                    senses, every aspect of the resort is crafted to enchant and soothe. Whether it's a retreat in one
-                    of our Coral Studios, an escape to a Garden Bungalow, or a sumptuous stay in our Island Haven
-                    Villas, our guests enjoy exclusivity with a view, comfort in the lap of luxury, and nature right at
-                    their doorstep. Join us at Emerald Bay, where your island fantasy becomes a reality.</p>
+                  <p>Dive into a world of aquatic fun with our Sailing and Water Sports activities at the Marina. From exhilarating jet ski rides to peaceful paddleboarding and guided sailing tours, there's something for every water enthusiast. Our state-of-the-art equipment and experienced instructors guarantee a safe and thrilling adventure, whether you're a seasoned sailor or a first-time explorer. Embrace the beauty of the open sea and create unforgettable memories at Emerald Bay Island Resort.</p>
                 </div>
               </div>
             </div>
@@ -67,9 +57,9 @@
 import Footer from "@/components/Footer.vue";
 
 export default {
-    components: {
-        Footer
-    },
+  components: {
+    Footer
+  },
 };
 </script>
 

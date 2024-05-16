@@ -1,5 +1,5 @@
 from django.contrib.auth.models import User
-from .models import Guest, Reservation, Room, Service
+from .models import Guest, Reservation, Room, Service, RoomType, Status
 from django.contrib.auth.password_validation import validate_password
 from rest_framework import serializers
 from rest_framework.validators import UniqueValidator
@@ -16,7 +16,6 @@ class ReservationSerializer(serializers.ModelSerializer):
     last_name = serializers.SerializerMethodField()
     status_name = serializers.SerializerMethodField()
     room_number = serializers.SerializerMethodField()
-
 
     class Meta:
         model = Reservation
@@ -36,9 +35,18 @@ class ReservationSerializer(serializers.ModelSerializer):
 
 
 class RoomSerializer(serializers.ModelSerializer):
+    room_type_name = serializers.SerializerMethodField()
+    rate = serializers.SerializerMethodField()
+
     class Meta:
         model = Room
-        fields = ('pk', 'room_number', 'rate', 'availability', 'category', 'status', 'service')
+        fields = ('pk', 'room_number', 'guest_limit', 'room_type_name', 'rate', 'status')
+
+    def get_room_type_name(self, obj):
+        return obj.room_type.name
+
+    def get_rate(self, obj):
+        return obj.room_type.rate
 
 
 class ServiceSerializer(serializers.ModelSerializer):

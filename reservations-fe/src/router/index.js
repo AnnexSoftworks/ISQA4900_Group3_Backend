@@ -10,6 +10,14 @@ import Contact from '@/components/Contact'
 import Reservations from '@/components/Reservations'
 import Login from '@/components/Login'
 import BaseDialog from "@/components/ui/BaseDialog.vue";
+import AvailabilityPage from "@/components/AvailabilityPage";
+import Availability from "@/components/Availability";
+import OceanSpa from "@/components/OceanSpa";
+import GourmetDining from "@/components/GourmetDining";
+import Marina from "@/components/Marina";
+import GolfRetreat from "@/components/GolfRetreat";
+import FitnessPavilion from "@/components/FitnessPavilion";
+import KidsClub from "@/components/KidsClub";
 
 const routes = [
     {
@@ -71,6 +79,46 @@ const routes = [
         path: '/login',
         name: 'Login',
         component: Login
+    },
+    {
+        path: '/availability1',
+        name: 'AvailabilityPage',
+        component: AvailabilityPage
+    },
+    {
+        path: '/availability',
+        name: 'Availability',
+        component: Availability,
+    },
+    {
+        path: '/ocean-spa',
+        name: 'OceanSpa',
+        component: OceanSpa,
+    },
+    {
+        path: '/gourmet-dining',
+        name: 'GourmetDining',
+        component: GourmetDining,
+    },
+    {
+        path: '/marina',
+        name: 'Marina',
+        component: Marina,
+    },
+    {
+        path: '/golf-retreat',
+        name: 'GolfRetreat',
+        component: GolfRetreat,
+    },
+    {
+        path: '/fitness-pavilion',
+        name: 'FitnessPavilion',
+        component: FitnessPavilion,
+    },
+    {
+        path: '/kids-club',
+        name: 'KidsClub',
+        component: KidsClub,
     }
 ]
 const router = createRouter({

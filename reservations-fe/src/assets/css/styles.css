@@ -7651,9 +7651,15 @@ button.close {
 .banner-tems {
   padding-top: 160px;
   padding-bottom: 40px;
-  background: url("../images/res-header.webp") no-repeat;
   background-size: cover;
-  background-position: center; }
+  background: url("../images/res-header.webp") no-repeat center;
+}
+.banner-tems2 {
+  padding-top: 160px;
+  padding-bottom: 40px;
+  background-size: cover;
+  background: url("../images/ocean-spa-header.webp") no-repeat center;
+}
   .banner-tems.bg-restaurants {
     background: url("../images/Restaurants/Restaurants.jpg") no-repeat;
     background-size: cover;

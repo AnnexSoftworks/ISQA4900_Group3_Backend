@@ -17,20 +17,21 @@
               <div class="section-slider height-v-about">
                 <div id="index12" class="owl-carousel  owl-theme">
                   <div class="item">
-                    <img alt="Third slide" src="../assets/images/coco-cay01.webp" class="img-responsive">
+                    <img alt="Third slide" src="../assets/images/ocean-spa-01.webp" class="img-responsive">
                   </div>
                 </div>
               </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 no-padding-left">
               <div class="text">
-                <h2 class="heading">Our History</h2>
+                <h2 class="heading">Ocean Spa</h2>
                 <div class="desc">
-                  <p>Emerald Bay Island Resort, in partnership with Royal Caribbean Cruise Lines, stands as a pinnacle
-                    of secluded luxury, nestled on the pristine shores of RCCL's Cocoa Cay. Our philosophy weaves the
-                    tranquility of an exclusive island getaway with the unmatched convenience of RCCL's impeccable
-                    voyages. While we share the island with RCCL, our resort is a world apart—a tranquil enclave
-                    dedicated to privacy, luxury, and an immersive natural experience.</p>
+                  <p>Indulge in the serene luxury of the Ocean Spa at Emerald Bay Island Resort, where the soothing
+                    sounds of the waves and the gentle sea breeze create the perfect ambiance for relaxation and
+                    rejuvenation. Our spa offers an array of treatments designed to revitalize your body and spirit,
+                    including therapeutic massages, invigorating body scrubs, and nourishing facials. Each session is
+                    personalized to ensure your utmost comfort and satisfaction, allowing you to experience unparalleled
+                    tranquility and rejuvenation.</p>
                 </div>
               </div>
             </div>
@@ -38,20 +39,18 @@
           <div class="about-item about-right">
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6  no-padding-left col-lg-push-6 col-md-push-6 ">
               <div class="img">
-                <img src="../assets/images/coco-cay02.webp" alt="#" class="img-responsive">
+                <img src="../assets/images/ocean-spa-02.webp" alt="#" class="img-responsive">
               </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 no-padding-right col-lg-pull-6 col-md-pull-6">
               <div class="text">
-                <h2 class="heading">Tropical Paradise</h2>
+                <h2 class="heading">Wellness Center</h2>
                 <div class="desc">
-                  <p>At Emerald Bay, we believe in creating unforgettable experiences that resonate with the unique
-                    essence of our tropical paradise. From the architectural elegance of our accommodations, which
-                    harmonize with the island’s natural splendor, to the personalized services designed to indulge your
-                    senses, every aspect of the resort is crafted to enchant and soothe. Whether it's a retreat in one
-                    of our Coral Studios, an escape to a Garden Bungalow, or a sumptuous stay in our Island Haven
-                    Villas, our guests enjoy exclusivity with a view, comfort in the lap of luxury, and nature right at
-                    their doorstep. Join us at Emerald Bay, where your island fantasy becomes a reality.</p>
+                  <p>At the Wellness Center, we believe that true well-being encompasses both physical and mental
+                    health. Our state-of-the-art facility offers a comprehensive range of wellness programs and
+                    activities designed to nurture your mind, body, and soul. From guided yoga sessions on the beach at
+                    sunrise to personalized fitness training and holistic health consultations, our experienced staff is
+                    dedicated to helping you achieve your wellness goals.</p>
                 </div>
               </div>
             </div>
@@ -67,9 +66,9 @@
 import Footer from "@/components/Footer.vue";
 
 export default {
-    components: {
-        Footer
-    },
+  components: {
+    Footer
+  },
 };
 </script>
 

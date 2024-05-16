@@ -31,7 +31,7 @@
             </a>
           </li>
         </ul>
-        <LoginButton v-if="!mobile && !isLoggedIn" class="login-button"></LoginButton>
+        <LoginButton v-if="!mobile" class="login-button"></LoginButton>
         <svg v-else-if="!mobile && isLoggedIn" @click="toggleUserinfo" class="account-svg"
              :class="{ 'svg-active': isUserinfoRoute }" xmlns="http://www.w3.org/2000/svg" height="1em"
              viewBox="0 0 448 512">
@@ -71,32 +71,32 @@
               <transition name="submenu-mobile">
                 <ul v-if="entertainment">
                   <li>
-                    <router-link active-class="link-active" class="sub-link" :to="{name: ''}" @click="toggleMobileNav">
+                    <router-link active-class="link-active" class="sub-link" :to="{name: 'OceanSpa'}" @click="toggleMobileNav">
                       Ocean Spa & Wellness Center
                     </router-link>
                   </li>
                   <li>
-                    <router-link active-class="link-active" class="sub-link" :to="{name: ''}" @click="toggleMobileNav">
+                    <router-link active-class="link-active" class="sub-link" :to="{name: 'GourmetDining'}" @click="toggleMobileNav">
                       Gourmet Dining
                     </router-link>
                   </li>
                   <li>
-                    <router-link active-class="link-active" class="sub-link" :to="{name: ''}" @click="toggleMobileNav">
+                    <router-link active-class="link-active" class="sub-link" :to="{name: 'Marina'}" @click="toggleMobileNav">
                       Exclusive Marina Services
                     </router-link>
                   </li>
                   <li>
-                    <router-link active-class="link-active" class="sub-link" :to="{name: ''}" @click="toggleMobileNav">
+                    <router-link active-class="link-active" class="sub-link" :to="{name: 'GolfRetreat'}" @click="toggleMobileNav">
                       Island Golf Retreat
                     </router-link>
                   </li>
                   <li>
-                    <router-link active-class="link-active" class="sub-link" :to="{name: ''}" @click="toggleMobileNav">
+                    <router-link active-class="link-active" class="sub-link" :to="{name: 'FitnessPavilion'}" @click="toggleMobileNav">
                       Fitness Pavilion
                     </router-link>
                   </li>
                   <li>
-                    <router-link active-class="link-active" class="sub-link" :to="{name: ''}" @click="toggleMobileNav">
+                    <router-link active-class="link-active" class="sub-link" :to="{name: 'KidsClub'}" @click="toggleMobileNav">
                       Kid's Paradise Club
                     </router-link>
                   </li>
@@ -194,24 +194,24 @@
       <div v-if="!mobile && entertainment" class="submenu-navigation">
         <ul class="navigation">
           <li>
-            <router-link active-class="link-active" class="link" :to="{name: ''}">Ocean Spa & Wellness Center
+            <router-link active-class="link-active" class="link" :to="{name: 'OceanSpa'}">Ocean Spa & Wellness Center
             </router-link>
           </li>
           <li>
-            <router-link active-class="link-active" class="link" :to="{name: ''}">Gourmet Dining</router-link>
+            <router-link active-class="link-active" class="link" :to="{name: 'GourmetDining'}">Gourmet Dining</router-link>
           </li>
           <li>
-            <router-link active-class="link-active" class="link" :to="{name: ''}">Exclusive Marina Services
+            <router-link active-class="link-active" class="link" :to="{name: 'Marina'}">Exclusive Marina Services
             </router-link>
           </li>
           <li>
-            <router-link active-class="link-active" class="link" :to="{name: ''}">Island Golf Retreat</router-link>
+            <router-link active-class="link-active" class="link" :to="{name: 'GolfRetreat'}">Island Golf Retreat</router-link>
           </li>
           <li>
-            <router-link active-class="link-active" class="link" :to="{name: ''}">Fitness Pavilion</router-link>
+            <router-link active-class="link-active" class="link" :to="{name: 'FitnessPavilion'}">Fitness Pavilion</router-link>
           </li>
           <li>
-            <router-link active-class="link-active" class="link" :to="{name: ''}">Kid's Paradise Club</router-link>
+            <router-link active-class="link-active" class="link" :to="{name: 'KidsClub'}">Kid's Paradise Club</router-link>
           </li>
         </ul>
       </div>
@@ -469,16 +469,12 @@ ul,
   border-bottom: 1px solid transparent;
 }
 
-.link-active:hover {
-  color: #ffffff!important;
-}
-
 .sub-link:hover {
-  color: #ffffff;
+  color: #d78f00;
 }
 
 .link-active {
-  color: #ffd234;
+  color: #d78f00;
 }
 
 .branding {

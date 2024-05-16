@@ -7,7 +7,6 @@
       <div class="form-section" style="position: relative;" @click="checkInSelected">
         <button class="titles">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-            <!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
             <path
                 d="M152 24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H64C28.7 64 0 92.7 0 128v16 48V448c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V192 144 128c0-35.3-28.7-64-64-64H344V24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H152V24zM48 192H400V448c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V192z"/>
           </svg>
@@ -21,7 +20,6 @@
       <div class="form-section" @click="checkOutSelected">
         <button class="titles">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-            <!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
             <path
                 d="M152 24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H64C28.7 64 0 92.7 0 128v16 48V448c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V192 144 128c0-35.3-28.7-64-64-64H344V24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H152V24zM48 192H400V448c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V192z"/>
           </svg>
@@ -41,7 +39,7 @@
         <p class="subtitle" v-if="totalGuests">Guests: {{ totalGuests }}</p>
       </div>
 
-      <button class="search-button" @click="search" style="text-shadow: 1px 1px 3px rgb(0,0,0, 0.5);">
+      <button class="search-button" @click="search">
         CHECK<br/>AVAILABILITY
       </button>
     </div>
@@ -78,6 +76,7 @@
 import {Calendar, DatePicker} from 'v-calendar';
 import 'v-calendar/style.css';
 import vClickOutside from "click-outside-vue3";
+import axios from 'axios';
 
 export default {
   name: "TheBookingForm",
@@ -158,24 +157,33 @@ export default {
     mounted() {
       this.changeDatePickerStyles();
     },
-    search() {
+    async search() {
       if (this.dateTo === null || this.dateFrom === null) {
         this.showDialog = true;
         return;
       }
 
-      const startDate = this.getDatePlus(this.dateFrom, 1).toISOString().split('T')[0];
-      const endDate = this.getDatePlus(this.dateTo, 1).toISOString().split('T')[0];
+      const startDate = this.dateFrom.toISOString().split('T')[0];
+      const endDate = this.dateTo.toISOString().split('T')[0];
 
-      this.$router.push({
-        name: 'AvailableRooms',
-        query: {
-          start: startDate,
-          end: endDate,
-          totalGuests: this.totalGuests,
-        },
+      console.log('Navigating to AvailabilityPage with params:', {
+        check_in_date: startDate,
+        check_out_date: endDate,
       });
+
+      try {
+        this.$router.push({
+          name: 'AvailabilityPage',
+          query: {
+            check_in_date: startDate,
+            check_out_date: endDate,
+          },
+        });
+      } catch (error) {
+        console.error("Error during search:", error);
+      }
     },
+
     changeDatePickerStyles() {
       this.$nextTick(() => {
         // Change the background color of the title wrapper
@@ -237,7 +245,7 @@ export default {
   height: 58px;
   padding-top: 0 !important;
   margin-top: -10px;
-  background-color: #d7a500;
+  background-color: #d78f00;
   line-height: 14px;
   font-size: 12px;
   font-weight: 500;
